@@ -2,15 +2,18 @@ package lab2;
 
 public class Descanso {
     private int horasDescanso;
-    private int horasSemana;
+    private int numeroSemanas;
 
     public void defineHorasDescanso(){
         this.horasDescanso = horasDescanso;
     }
-    public void defineHorasSemanas(){
-        this.horasSemana = horasSemana;
+
+    public void defineNumeroSemanas(){
+        this.numeroSemanas = numeroSemanas;
     }
-    public String verificaEstado(){
+
+    public String getStatusGeral(){
+
         if (horasDescanso >= 26){
             return "Descansado";
         } else {
