@@ -2,5 +2,30 @@ package lab2;
 
 public class Disciplina {
     private String nomeDisciplina;
-    private int horas
+    private int horasEstudos;
+    private double valorNota;
+    private double[] notas = new double[4];
+
+    public void cadastraHoras(int horas) {
+        horasEstudos += horas;
+    }
+
+    public void cadastraNota(int nota, double valorNota) {
+        this.notas[nota - 1] = valorNota;
+    }
+
+    public boolean aprovado() {
+        double soma = 0;
+        for (int i = 0; i < notas.length; i++) {
+            soma += notas[i];
+        }
+        double media = soma / notas.length;
+
+        if (media >= 7){
+            return true;
+
+        } else {
+            return false;
+        }
+    }
 }
