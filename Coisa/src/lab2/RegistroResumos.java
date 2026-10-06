@@ -39,6 +39,6 @@ public class RegistroResumos {
     }
 
     public boolean temResumo(String tema){
-        return true;
+        return false;
     }
 }
