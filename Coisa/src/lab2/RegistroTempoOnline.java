@@ -14,6 +14,13 @@ public class RegistroTempoOnline {
         this.tempoEsperado = 120;
     }
 
+
+
+// Riquelme na batera!
+
+
+
+
     public void adicionaTempoOnline(int tempoOnline) {
         tempoOnlineInvestido += tempoOnline;
     }

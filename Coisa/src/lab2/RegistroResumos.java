@@ -4,17 +4,15 @@ public class RegistroResumos {
     private String[] temas;
     private String[] conteudos;
     private int contadorResumo;
-    private int indice;
-
 
     public RegistroResumos(int numeroDeResumos){
         this.temas = new String[numeroDeResumos];
         this.conteudos = new String[numeroDeResumos];
         this.contadorResumo = 0;
-        this.indice = 0;
     }
 
     public void adiciona(String tema, String conteudo){
+
 
     }
 

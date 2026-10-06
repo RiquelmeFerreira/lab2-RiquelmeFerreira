@@ -4,12 +4,12 @@ public class Descanso {
     private int horasDescanso;
     private int numeroSemanas;
 
-    public void defineHorasDescanso(){
-        this.horasDescanso = horasDescanso;
+    public void defineHorasDescanso(int valorHorasDescanso){
+        this.horasDescanso = valorHorasDescanso;
     }
 
-    public void defineNumeroSemanas(){
-        this.numeroSemanas = numeroSemanas;
+    public void defineNumeroSemanas(int valorNumeroSemanas){
+        this.numeroSemanas = valorNumeroSemanas;
     }
 
     public String getStatusGeral(){

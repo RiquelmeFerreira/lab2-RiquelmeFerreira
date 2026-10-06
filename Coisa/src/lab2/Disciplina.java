@@ -20,6 +20,12 @@ public class Disciplina {
         this.notas[nota - 1] = valorNota;
     }
 
+
+
+    // Riquelme na batera!
+
+
+
     public boolean aprovado() {
         double soma = 0;
         for (int i = 0; i < notas.length; i++) {
