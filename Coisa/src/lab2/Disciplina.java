@@ -1,11 +1,10 @@
 package lab2;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Disciplina {
     private String nomeDisciplina;
     private int horasEstudos;
-    private double media;
     private double valorNota;
     private double[] notas = new double[4];
 
@@ -20,20 +19,17 @@ public class Disciplina {
         this.notas[nota - 1] = valorNota;
     }
 
-
-
-    // Riquelme na batera!
-
-
-
-    public boolean aprovado() {
+    public double calculaMedia(){
         double soma = 0;
         for (int i = 0; i < notas.length; i++) {
             soma += notas[i];
         }
-
         double media = soma / notas.length;
-        if (media >= 7){
+        return media;
+    }
+
+    public boolean aprovado() {
+        if (calculaMedia() >= 7){
             return true;
         } else {
             return false;
@@ -42,6 +38,6 @@ public class Disciplina {
 
     @Override
     public String toString(){
-        return nomeDisciplina + " " + horasEstudos + " " + media + " " + notas.toString();
+        return nomeDisciplina + " " + horasEstudos + " " + calculaMedia() + " " + Arrays.toString(this.notas);
     }
 }
