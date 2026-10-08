@@ -7,7 +7,7 @@ public class Disciplina {
     private int horasEstudos;
     private double[] notas = new double[4];
     private int numeroNotas;
-    private int[] pesos = new int[numeroNotas];
+    private int[] pesos = new int[notas.length];
 
     public Disciplina(int numeroNotas){
         this.numeroNotas = numeroNotas;
@@ -29,17 +29,30 @@ public class Disciplina {
         this.notas[nota - 1] = valorNota;
     }
 
-    public double calculaMedia(){
+    public double calculaMedia(int[] pesos){
         double soma = 0;
-        for (int i = 0; i < notas.length; i++) {
-            soma += notas[i];
+        double ponderada = 0;
+        double listaPesos = 0;
+
+        if (pesos == null) {
+            for (int i = 0; i < notas.length; i++) {
+                soma += notas[i];
+            }
+            double media = soma / notas.length;
+            return media;
+
+        }else {
+            for (int i = 0; i < notas.length; i++){
+                ponderada += notas[i] * pesos[i];
+                listaPesos += pesos[i];
+            }
+            double mediaPonderada = ponderada / listaPesos;
+            return mediaPonderada;
         }
-        double media = soma / notas.length;
-        return media;
     }
 
     public boolean aprovado() {
-        if (calculaMedia() >= 7){
+        if (calculaMedia(pesos) >= 7){
             return true;
         } else {
             return false;
@@ -48,6 +61,6 @@ public class Disciplina {
 
     @Override
     public String toString(){
-        return nomeDisciplina + " " + horasEstudos + " " + calculaMedia() + " " + Arrays.toString(this.notas);
+        return nomeDisciplina + " " + horasEstudos + " " + calculaMedia(pesos) + " " + Arrays.toString(this.notas);
     }
 }
