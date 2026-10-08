@@ -6,20 +6,13 @@ public class RegistroTempoOnline {
     private int tempoEsperado;
 
     public RegistroTempoOnline(String nomeDisciplina){
-        this.nomeDisciplina = nomeDisciplina;
+        this(nomeDisciplina, 120);
     }
 
     public RegistroTempoOnline(String nomeDisciplina, int tempoEsperado){
         this.nomeDisciplina = nomeDisciplina;
-        this.tempoEsperado = 120;
+        this.tempoEsperado = tempoEsperado;
     }
-
-
-
-// Riquelme na batera!
-
-
-
 
     public void adicionaTempoOnline(int tempoOnline) {
         tempoOnlineInvestido += tempoOnline;
@@ -35,6 +28,6 @@ public class RegistroTempoOnline {
 
     @Override
     public String toString() {
-        return nomeDisciplina + tempoOnlineInvestido + "/" + tempoEsperado;
+        return nomeDisciplina + " " + tempoOnlineInvestido + "/" + tempoEsperado;
     }
 }
