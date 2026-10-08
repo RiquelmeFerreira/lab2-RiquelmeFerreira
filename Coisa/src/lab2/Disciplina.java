@@ -5,9 +5,19 @@ import java.util.Arrays;
 public class Disciplina {
     private String nomeDisciplina;
     private int horasEstudos;
-    private double valorNota;
     private double[] notas = new double[4];
+    private int numeroNotas;
+    private int[] pesos = new int[numeroNotas];
 
+    public Disciplina(int numeroNotas){
+        this.numeroNotas = numeroNotas;
+    }
+
+    public Disciplina(String nomeDisciplina, int numeroNotas, int[] pesos){
+        this.nomeDisciplina = nomeDisciplina;
+        this.numeroNotas = numeroNotas;
+        this.pesos = pesos;
+    }
     public Disciplina(String nomeDisciplina){
         this.nomeDisciplina = nomeDisciplina;
     }
