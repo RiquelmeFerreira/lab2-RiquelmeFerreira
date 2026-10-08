@@ -18,7 +18,7 @@ public class Disciplina {
     public void cadastraNota(int nota, double valorNota) {
         this.notas[nota - 1] = valorNota;
     }
-    //  gyufgygy
+
     public double calculaMedia(){
         double soma = 0;
         for (int i = 0; i < notas.length; i++) {
