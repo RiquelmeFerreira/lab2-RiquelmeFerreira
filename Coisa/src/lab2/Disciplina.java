@@ -6,25 +6,24 @@ public class Disciplina {
     private String nomeDisciplina;
     private int horasEstudos;
     private double[] notas;
-    private int numeroNotas;
     private double[] pesos;
 
-    public Disciplina(int numeroNotas) {
-        this.numeroNotas = numeroNotas;
+    public Disciplina(String nomeDisciplina) {
+        this.nomeDisciplina = nomeDisciplina;
+        this.horasEstudos = 0;
+        this.notas = new double[4];
+    }
+    public Disciplina(String nomeDisciplina, int numeroNotas) {
+        this.nomeDisciplina = nomeDisciplina;
+        this.horasEstudos = 0;
         this.notas = new double[numeroNotas];
     }
 
     public Disciplina(String nomeDisciplina, int numeroNotas, double[] pesos) {
         this.nomeDisciplina = nomeDisciplina;
-        this.numeroNotas = numeroNotas;
+        this.horasEstudos = 0;
         this.notas = new double[numeroNotas];
         this.pesos = pesos;
-    }
-
-    public Disciplina(String nomeDisciplina) {
-        this.nomeDisciplina = nomeDisciplina;
-        this.numeroNotas = 4;
-        this.notas = new double[4];
     }
 
     public void cadastraHoras(int horas) {
@@ -41,9 +40,6 @@ public class Disciplina {
         double listaPesos = 0;
 
         if (pesos == null) {
-           // if (notas.length == 0) {
-            //    return 0.0;
-            //}
             for (int i = 0; i < notas.length; i++) {
                 soma += notas[i];
             }
@@ -55,7 +51,6 @@ public class Disciplina {
                 ponderada += notas[i] * pesos[i];
                 listaPesos += pesos[i];
             }
-            //if (listaPesos == 0) { return 0.0;}
             double mediaPonderada = ponderada / listaPesos;
             return mediaPonderada;
         }
