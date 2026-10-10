@@ -1,7 +1,6 @@
 package lab2;
 
 import java.util.Arrays;
-import java.util.Locale;
 
 public class RegistroResumos {
     private Resumo[] resumos;
